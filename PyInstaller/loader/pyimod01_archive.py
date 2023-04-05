@@ -73,7 +73,7 @@ class ArchiveFile:
         Make this class act like a file, by invoking most methods on its underlying file object.
         """
         file = self.local().file
-        assert file
+        assert file, name
         return getattr(file, name)
 
     def __enter__(self):
